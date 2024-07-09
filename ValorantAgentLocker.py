@@ -50,8 +50,9 @@ def In_Lock(Character):
     running = True
     sleep(3)
     while running:
-        pag.leftClick(Character)
-        pag.leftClick(lock_in)
+        pag.leftClick(Character, _pause= False)
+        sleep(0.01)
+        pag.leftClick(lock_in, _pause= False)
         sleep(0.01)
         
         if kb.is_pressed('f6'):
@@ -68,10 +69,11 @@ def randomize_agent():
     sleep(3)
     while running:
         selected_agent = random.choice(all_agents)
-        pag.leftClick(selected_agent)
+        pag.leftClick(selected_agent, _pause= False)
+        sleep(0.01)
 
         while kb.is_pressed('f6'):
-            pag.leftClick(lock_in)
+            pag.leftClick(lock_in, _pause= False)
             running = False
         
        
